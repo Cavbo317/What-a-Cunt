@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="inc/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>Thank You</title>
+
+    <style type="text/css">
+        <!--
+        body {
+            margin: 0px;
+            padding: 0;
+            background-color: #2E393E;
+            background-repeat: no-repeat;
+        }
+        -->
+    </style>
+
+</head>
+
+<body>
+
+    <div id="thank-you" style="text-align: center; margin-top: 25%; font-size: 36px; color: white">
+
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            if (window.parent.surveyCompleted == "presurvey") {
+                $('#thank-you').html("Thank you for completing the survey. <br/><br/> Please select a module from the Menu on the left to continue.")
+            }
+            if (window.parent.surveyCompleted == "postsurvey") {
+                $('#thank-you').html("Thank you for completing the survey. <br/><br/> You may now print your certificate.")
+            }
+        })
+    </script>
+</body>
+
+</html>

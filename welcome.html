@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+
+<style type="text/css">
+	<!--
+	body {
+		margin: 0px;
+		padding:0;
+		background-color: #415259;
+		background-repeat: no-repeat;
+	}
+	-->
+</style>
+
+</head>
+
+<body>
+
+    <div id="stand-alone" style="text-align: center; margin-top: 25%; font-size: 36px; color: white">
+        Thank you. 
+    <br />
+        <br />
+        Please select an item on the left menu to begin taking the course.
+    </div>
+
+    <script>
+        if (window.parent.isStandAlone == true) {           
+            document.getElementById("stand-alone").innerHTML = "This course is configured as a standalone. No progress will be saved. <br /> <br /> Please select an item on the left menu to begin taking the course.";
+        }
+    </script>
+</body>
+
+</html>

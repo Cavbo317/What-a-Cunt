@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>nope Stand Alone Course Player</title>
+
+<!-- Initial Mobile Support -->
+<meta name="viewport" content="width=device-width"> 
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+
+<script type="text/javascript" src="inc/js/jquery.min.js"></script>
+<script type="text/javascript" src="inc/js/API.js"></script>
+<script type="text/javascript" src="inc/js/core.js"></script>
+<script type="text/javascript" src="inc/js/updates.js"></script>
+<script type="text/javascript">
+    window.onbeforeunload = closingCode;
+
+    function closingCode() {
+
+        
+        //alert("Database Updated");
+        if (studentID != "" && studentID != "nopeqa" && studentID != "NonUser") {
+            updateDatabase();
+            return "Your Session Has Been Saved";
+        }
+        else {
+            return "Your Session Has NOT Been Saved";
+        }
+    }
+    $(document).ready(function () {
+        if(isStandAlone == true)
+        {           
+            $("#Content")[0].src = "welcome.html";
+            unlockMenu = true;
+            var menuButton = top.frames["Header"].document.getElementById("menuButton");
+            $(menuButton).trigger('click');
+        } else {
+            setUserID();
+            $("#Content")[0].src = "student.html";
+            //checkCompletion();
+        }
+
+    });
+
+</script>
+
+
+</head>
+   
+    <!-- These 90's frames must GO AWAY in order to be HTML5 Compliant -->
+<frameset rows="75,600,*,0" cols="*" framespacing="0" frameBorder="0" border="0" id="productFrameSet" onunload="_onUnload()">
+    <frame id="Header" name="Header" title="Header" src="header.html" scrolling="no" noresize="noresize" />
+	    <frameset id="Body" rows="600" cols="0,*" framespacing="0" frameBorder="0" border="0">
+		    <frame id="Menu" name="Menu" title="Menu" src="Menu.html" scrolling="yes" noresize="noresize" frameBorder="0"/>
+		    <frame id="Content" name="Content" title="Content" src="student.html" />
+	    </frameset>
+</frameset>
+
+
+</html>

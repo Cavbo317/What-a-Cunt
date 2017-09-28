@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- All SCO ID's MUST match their identifier name in the imsmanifest.xml-->
+<config>
+  <!-- SCOS not in a group go under groupid 0  -->
+	<!-- SCOS in a group start with groupid 1 -->
+	<scogroups>
+    <group id="0" enabled="true" nextgroup="1">
+     <satisfy>
+      <sco id="SCO_Splash" enabled="true" nextsco="SCO_001" attempt="-1"></sco>
+      <sco id="SCO_001" enabled="true" nextsco="" attempt="-1"></sco>
+     </satisfy>
+    </group>
+	<group id="1" enabled="true">
+		<sco id="SCO_002" enabled="true" nextsco="" attempt="-1"></sco>
+	</group>
+  </scogroups>	
+	<certification>
+		<scoGroup id="0"></scoGroup>    
+	</certification>
+</config>

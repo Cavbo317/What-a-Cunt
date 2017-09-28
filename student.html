@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="inc/js/jquery.min.js"></script>
+    <link href="inc/css/login.css" rel="stylesheet" />
+    <title>Student</title>
+</head>
+<body>
+
+    <div id="loading-image"></div>
+
+    <div id="courseTitle"></div>
+
+    <div id="release"><p id="release-text"></p></div>
+
+    <form class="basic-grey">
+        <h1>Student Login Form 
+         <span>By clicking "Start Course" or "Reset Course" you have read and acknowledge the distribution statement above.</span>
+        </h1>
+        <div class="buttonHolder">
+            <label>            
+
+                <input type="submit" class="button" id="start" value="Start Course" onclick="Javascript: startCourse('continue');" />
+
+                <input type="submit" class="button" id="reset" value="Reset Course" onclick="Javascript: startCourse('reset');" />            
+            </label>
+        </div>
+    </form>
+
+    <script>
+
+        $('input[type="submit"]').prop('disabled', true);
+
+        //Start the course after either button is clicked
+        function startCourse(bookmark) {
+            if (window.parent.isStandAlone == false) {
+                //run setUserID in core.js
+                window.parent.setUserID();
+                launchCourse(bookmark);               
+            }
+            else if (window.parent.isStandAlone == true) {               
+                window.parent.forceWelcome();
+                var menuButton = top.frames["Header"].document.getElementById("menuButton");
+                window.parent.unlockMenu = true;
+                $(menuButton).trigger('click');               
+            }
+        }
+
+        function launchCourse(bookmark) {
+            if (bookmark == "reset") {
+                try {
+                    alert("Your course progress has been reset. If this is an error please close the course window immediately to retain previous progress");
+                    window.parent.courseReset = true;
+                    window.parent.getDetails();
+                }
+                catch (err) {
+
+                }
+            }
+            else {
+                try {
+                    window.parent.getDetails();
+                }
+                catch (err) {
+
+                }
+            }
+        }
+
+        try {
+
+            $.ajax({
+                type: "GET",
+                url: "release.xml",
+                dataType: "xml",
+                success: function (xml) {
+      
+                    var $relText = $(xml).find("config").children("release").text();
+
+                    $("#release-text").text($relText);
+
+                    if ($('#release').hasScrollBar() == false) {
+                        $('input[type="submit"]').prop('disabled', false);
+                    }
+
+                    },
+                    failure: function (response) {
+                        alert(response.d);
+                    },
+                    error: function (response) {
+                        alert(response.d);
+                    }
+                });
+            $.ajax({
+                type: "GET",
+                url: "../Product/imsmanifest.xml",
+                dataType: "xml",
+                success: function (xml) {
+                    //TODO remove more un needed VARS used in old stand alone IE: productCourseNumber
+                    //Set the courseID/productCourseNumber
+                    var $courseTitle = $(xml).find("organization").children("title").text();
+
+                    $("#courseTitle").text($courseTitle);
+
+                },
+                failure: function (response) {
+                    alert(response.d);
+                },
+                error: function (response) {
+                    alert(response.d);
+                }
+            });
+        }
+        catch (exception) {
+            // No internet available - Do nothing to bypass error
+        }
+
+
+       $('#release').on('scroll', function () {
+                if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+                    $('input[type="submit"]').prop('disabled', false);
+                }               
+       })
+
+       $.fn.hasScrollBar = function () {
+                return this.get(0).scrollHeight > this.height();
+            }
+
+       $('.buttonHolder').on('click', function () {
+
+
+           if ($('input[type="submit"]').is(':disabled') == true) {
+               alert("You must read and acknowledge the disclosure statement.");
+           }
+       });
+
+    </script>
+
+<body onUnload= "window.parent.forceWelcome()" ></body>
+</html>

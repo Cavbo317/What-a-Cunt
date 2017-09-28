@@ -1,0 +1,99 @@
+html, body 
+{
+  padding:0px;
+  margin:0px;
+  border: 0px;
+  background-color:#2E393E;
+}
+
+#wrapper 
+{
+    text-align: left;
+    color: #FFF;
+	height:auto;
+	width:auto ;
+    background-color:#2E393E;
+
+}
+
+#menu 
+{
+	font-size:13px;
+	font-family:Calibri;
+	text-align: left;
+	height:auto;
+	width:auto;
+	background-color:#2E393E;
+	float:left;
+    padding-left: 5px;
+}
+
+li
+{
+	margin:-10px 0;
+	display: inline-block;
+}
+
+.intro {
+	font-weight:600;
+}
+
+.sco {
+
+}
+
+ul {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    border:  0px 0px 0px 0px;
+    display: table;
+}
+
+#sco {
+    /* font-size:14px; */
+    margin-top: 5px;
+    background: url(../img/start.png) no-repeat 5% 0%;
+    padding-left: 35px;
+}
+
+
+#lesson {
+	margin-top:5px;
+	background: url(../img/plus.png) no-repeat;
+ 	padding-left: 25px;
+	font-weight:600;
+}
+
+#postsurvey,
+#presurvey,
+#certificate {
+    margin-top:5px;
+	background: url(../img/start.png) no-repeat;
+ 	padding-left: 25px;
+	font-weight:600;
+}
+
+div:hover {
+    cursor: hand; 
+    cursor: pointer;
+}
+
+div {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#prodtit {
+    font-size:18px;
+    font-weight:bold;
+    color:#415259;
+}
+
+.disabledButton{
+    pointer-events: none;
+    opacity: 0.4;
+}

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<CourseSurvey>
+  <instructions>Please complete this survey</instructions>
+  <objs>
+    <obj>Determine ability to recognize duties and responsibilities of a Maintenance Operations Officer-in-Charce/Superintendent.</obj>
+    <obj>Determine ability to recognize basic functions and responsibilities of the Maintenance Operations Center (MOC).</obj>
+    <obj>Determine ability to recognize basic functions and responsibilities of Engine Management (EM) Section.</obj>
+    <obj><![CDATA[Determine ability to recognize basic functions and responsibilities of the Plans, Scheduling, and Documentation (PS&D) Section.]]> </obj>
+    <obj>Determine ability to recognize basic functions and responsibilities of the Maintenance Management Analysis (MMA) Section.</obj>
+    <obj>Determine ability to recognize basic functions and responsibilities of the Maintenance Training (MT) Section.</obj>
+    <obj><![CDATA[Determine ability to recognize basic functions and responsibilities of the Program and Resources (P&R) Section.]]></obj>
+  </objs>
+</CourseSurvey>

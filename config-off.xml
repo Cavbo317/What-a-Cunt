@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- All SCO ID's MUST match their identifier name in the imsmanifest.xml-->
+<config>
+  <!-- SCOS not in a group go under groupid 0  -->
+	<!-- SCOS in a group start with groupid 1 -->
+	<scogroups>
+    <group id="0" enabled="true" nextgroup="1">
+     <satisfy>
+      <sco id="SCO_Splash" enabled="true" nextsco="SCO_001" attempt="1"></sco>
+      <sco id="SCO_001" enabled="true" nextsco="SCO_002" attempt="-1"></sco>
+     </satisfy>
+    </group>  
+		<!-- Define each group with <group id="1,2,3,4...etc" enabled="true/false nextgroup="nextSCOgrpID"> -->
+    <!-- Satisfy tags are used for grouping a SCO(S) that completes the parent group regardless of progression. Pre tests etc -->
+		<group id="1" enabled="false" nextgroup="2">
+     <satisfy>
+			<sco id="SCO_002" enabled="true" nextsco="SCO_003" attempt="-1"></sco>
+			<sco id="SCO_003" enabled="true" nextsco="SCO_004" attempt="-1"></sco>
+     </satisfy>
+		</group>
+		<group id="2" enabled="false" nextgroup="3">
+      <satisfy>
+			  <sco id="SCO_004" enabled="true" nextsco="SCO_005" attempt="-1"></sco>
+      </satisfy>
+		</group>
+		<group id="3" enabled="false" nextgroup="4">
+      <satisfy>
+        <sco id="SCO_005" enabled="true" nextsco="SCO_006" attempt="1"></sco>
+      </satisfy>
+      <satisfy>
+			  <sco id="SCO_006" enabled="true" nextsco="SCO_007" attempt="-1"></sco>
+			  <sco id="SCO_007" enabled="true" nextsco="SCO_008" attempt="-1"></sco>
+			  <sco id="SCO_008" enabled="true" nextsco="SCO_009" attempt="-1"></sco>
+      </satisfy>
+		</group>
+		<group id="4" enabled="false" nextgroup="5">
+      <satisfy>
+			  <sco id="SCO_009" enabled="true" nextsco="SCO_010" attempt="-1"></sco>
+			  <sco id="SCO_010" enabled="true" nextsco="SCO_011" attempt="-1"></sco>
+			  <sco id="SCO_011" enabled="true" nextsco="SCO_012" attempt="-1"></sco>
+      </satisfy>
+		</group>
+		<group id="5" enabled="false" nextgroup="6">
+      <satisfy>
+			  <sco id="SCO_012" enabled="true" nextsco="SCO_013" attempt="-1"></sco>
+			  <sco id="SCO_013" enabled="true" nextsco="SCO_014" attempt="-1"></sco>
+			  <sco id="SCO_014" enabled="true" nextsco="SCO_015" attempt="-1"></sco>
+			  <sco id="SCO_015" enabled="true" nextsco="SCO_016" attempt="-1"></sco>
+      </satisfy>
+		</group>
+		<group id="6" enabled="false" nextgroup="">
+      <satisfy>
+			  <sco id="SCO_016" enabled="true" nextsco="SCO_017" attempt="-1"></sco>
+			  <sco id="SCO_017" enabled="true" nextsco="SCO_018" attempt="-1"></sco>
+			  <sco id="SCO_018" enabled="true" nextsco="" attempt="-1"></sco>
+      </satisfy>
+		</group>
+	</scogroups>
+	<!-- Define required SCOGROUP ID's or SCOS for certification -->
+	<certification>
+		<scoGroup id="1"></scoGroup>
+    <scoGroup id="2"></scoGroup>
+	</certification>
+</config>

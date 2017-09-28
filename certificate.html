@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+
+<title>Certificate</title>
+
+<script>
+ 
+    var courseTitle = window.parent.productTitle;
+    var courseNumber = window.parent.productCourseNumber;
+    var firstName = window.parent.studentFirstName;
+    var middleName = window.parent.studentMiddleName;
+    var lastName = window.parent.studentLastName;
+    var fullName = firstName + " " + middleName + " " + lastName;
+   /*   
+    var courseTitle = " A Loong Course Title ( 123456789 )";
+    var courseNumber = "123456789"
+    var firstName = "John";
+    var middleName = "P.";
+    var lastName = "Doe";
+    var fullName = firstName + " " + middleName + " " + lastName;
+    */
+//Date Stuff
+//This can be done with jquery but I was bored.
+var monthNames = [
+"Jan", "Feb", "Mar",
+"Apr", "May", "Jun", "Jul",
+"Aug", "Sep", "Oct",
+"Nov", "Dec"
+];
+
+var d = new Date();
+var day = d.getDate();
+var monthIndex = d.getMonth();
+var year = d.getFullYear();
+var date = day + " " + monthNames[monthIndex] + " " + year;
+
+
+function _onLoad() {
+
+		courseTitle = window.parent.productTitle;
+		courseNumber = window.parent.productCourseNumber;
+		firstName = window.parent.studentFirstName;
+		middleName = window.parent.studentMiddleName;
+		lastName = window.parent.studentLastName;
+		fullName = firstName + " " + middleName + " " + lastName;
+		printCert();
+		
+}
+function printCert() {
+    parent.Content.focus();
+    window.print();
+}
+</script>
+<style type="text/css">
+    body {
+		margin: 0px;
+		padding:0px;
+		background-color: #415259;
+		background-repeat: no-repeat;
+	}
+    #cert {
+        height:auto;
+        width:auto;
+    }
+    #name {
+    
+    }
+    #course {
+    
+    }
+    #date {
+    
+    }
+
+</style>
+
+</head>
+
+
+<body onLoad="_onLoad()">
+    <canvas id="myCanvas" width="563" height="750" style=""></canvas>
+    <script>
+
+        function loadImages(sources, callback) {
+            var images = {};
+            var loadedImages = 0;
+            var numImages = 0;
+            // get num of sources Incase we add a SEAL / nope Logo ETC to cert.
+            for (var src in sources) {
+                numImages++;
+            }
+            for (var src in sources) {
+                images[src] = new Image();
+                images[src].onload = function () {
+                    if (++loadedImages >= numImages) {
+                        callback(images);
+                    }
+                };
+                images[src].src = sources[src];
+            }
+        }
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+
+        var sources = {
+            studentCert: 'inc/img/cert.jpg',
+        };
+
+        //draw certificate and add student info
+        loadImages(sources, function (images) {
+            context.drawImage(images.studentCert, 0, 0, images.studentCert.width, images.studentCert.height,    // source rectangle
+                                                  0, 0, canvas.width, canvas.height)  // destination rectangle
+            context.rotate(-Math.PI/2);
+            context.font = '20pt Calibri';
+            var nameWidth = context.measureText(fullName).width;
+            var courseWidth = context.measureText(courseTitle).width;
+            var courseNWidth = context.measureText(courseNumber).width;
+            /*
+            context.fillText(fullName, (canvas.width / 2) - (nameWidth / 2), 250);
+            context.fillText(courseTitle, (canvas.width / 2) - (courseWidth / 2), 320);
+            context.fillText(courseNumber, (canvas.width / 2) - (courseNWidth / 2), 350);
+            */
+            context.fillText(fullName, -(canvas.height / 2) - (nameWidth / 2), 250);
+            fitTextOnCanvas(courseTitle, "Calibri", 320);
+            //context.fillText(courseTitle, -(canvas.height / 2) - (courseWidth / 2), 320);
+            context.font = '20pt Calibri';
+            context.fillText(courseNumber, -(canvas.height / 2) - (courseNWidth / 2), 350);
+            
+            context.font = '10pt Calibri';
+            context.fillText(date, -200, 480);
+        });
+
+      
+
+
+        function fitTextOnCanvas(text, fontface, yPosition) {
+
+            // start with a large font size
+            var fontsize = 300;
+
+            // lower the font size until the text fits the canvas
+            do {
+                fontsize--;
+                context.font = fontsize + "px " + fontface;
+            } while (context.measureText(text).width > canvas.width)
+
+            // draw the text
+            context.fillText(text, -(canvas.height / 2) - (context.measureText(courseTitle).width / 2), yPosition);
+
+            //alert("A fontsize of " + fontsize + "px fits this text on the canvas");
+
+        }
+
+
+    </script>
+</body>
+</html>

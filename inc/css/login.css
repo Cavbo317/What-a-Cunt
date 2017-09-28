@@ -1,0 +1,162 @@
+﻿html, body {
+  padding:0px;
+  margin:0px;
+  border: 0px;
+  background-color:#2E393E;
+}
+
+/* Basic Grey */
+.basic-grey {
+     margin-left:auto;
+     margin-right:auto;
+     margin-top:50%;
+     max-width: 500px;
+     background: #2E393E;
+     padding: 25px 15px 25px 10px;
+     font: 12px Georgia, "Times New Roman", Times, serif;
+     color: #888;
+     text-shadow: 1px 1px 1px #000000;
+     border:1px solid #E4E4E4;
+     z-index:9999;
+     position:absolute;
+     left: 18%;
+     top: 1%
+}
+.basic-grey h1 {
+     font-size: 25px;
+     padding: 0px 0px 10px 0px;
+     display: block;
+     border-bottom:1px solid #E4E4E4;
+     margin: -10px -15px 30px -10px;
+     color: #E4E4E4;
+     text-align: center;
+}
+.basic-grey h1>span {
+     display: block;
+     font-size: 11px;
+     text-align: center;
+}
+.basic-grey label {
+     margin: 0px;
+     text-align: center;
+}
+.basic-grey label>span {
+     width: 20%;
+     text-align: center;    
+     margin-top: 10px;
+     color: #E4E4E4;
+}
+.basic-grey input[type="text"], .basic-grey input[type="email"], .basic-grey textarea, .basic-grey select {
+     border: 1px solid #DADADA;
+     color: #000000;
+     height: 30px;
+     margin-bottom: 16px;
+     margin-right: 6px;
+     margin-top: 2px;
+     outline: 0 none;
+     padding: 3px 3px 3px 5px;
+     width: 70%;
+     font-size: 12px;
+     line-height:15px;
+     box-shadow: inset 0px 1px 4px #ECECEC;
+     -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+     -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+.basic-grey textarea{
+     padding: 5px 3px 3px 5px;
+}
+.basic-grey select {
+     background: #FFF url('down-arrow.png') no-repeat right;
+     background: #FFF url('down-arrow.png') no-repeat right);
+     appearance:none;
+     -webkit-appearance:none; 
+     -moz-appearance: none;
+     text-indent: 0.01px;
+     text-overflow: '';
+     width: 70%;
+     height: 35px;
+     line-height: 25px;
+}
+.basic-grey textarea{
+     height:100px;
+}
+
+.basic-grey .button{
+     border: none;
+     padding: 10px 25px 10px 25px;
+     border-radius: 3px;
+     cursor: pointer;
+}
+
+#start{
+     background: #B6B6B6;
+     color: #FFF;
+     box-shadow: 1px 1px 5px #B6B6B6;
+     text-shadow: 1px 1px 1px #000000;
+}
+
+#reset{
+     background: #CF7A7A;
+     color: #FFF;
+     box-shadow: 1px 1px 5px #B6B6B6;
+     text-shadow: 1px 1px 1px #CF7A7A;
+}
+
+
+#reset:hover {
+     background: #9E3F3F;
+}
+
+#start:hover {
+     background: #4cff00;
+}
+
+#loading-image{
+    text-align:center;
+    background: url(../img/loader.gif) center center no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 95%;
+    z-index:10000;
+    vertical-align:central;
+
+}
+
+.buttonHolder {
+    text-align: center;
+}
+
+#release{
+    background-color: #FFFFFF;    
+    margin-top:11%;
+    width: 520px;
+    height: 300px;
+    overflow-y: auto;
+    margin-left:auto;
+    margin-right:auto;
+    position:absolute;
+    left: 18.5%;
+    top: 1%;
+}
+
+
+#release-text {
+    text-align:justify;
+    color: #000000; 
+    font-size: 18px;
+    padding:0 5px 0 5px;
+}
+
+#courseTitle{
+    text-align:center;
+    color: #E4E4E4;     
+    font-size: 20px;
+    margin-top:2%;
+    margin-left:7.2%;
+    max-width: 700px;
+    font-weight:900;
+}
+
+#survey{
+    color:white;
+}

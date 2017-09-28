@@ -1,0 +1,224 @@
+﻿body {
+  padding:0px;
+  margin:0px;
+  border: 0px;
+  background-color:#2E393E;
+  border-spacing:5px;
+  font-size: 15px;
+}
+
+legend {
+    font-size: 20px;
+    color: white;
+    text-shadow: 2px 2px #000;
+    text-align: center;
+}
+
+select {
+    width: 100px;
+}
+
+fieldset, #radioButtons, div {
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 5px;
+    border: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #000;
+    min-height: 100px;
+}
+
+div {
+    min-height: 50px;
+    overflow: auto;
+}
+
+p {
+    padding: 5px 5px 5px 5px;
+}
+
+#Content {
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 5px;
+    border: 0px;
+    border-radius: 0px;
+    box-shadow: none;
+    min-height: 0px;
+    display: none;
+}
+
+#afscs {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    min-height: 30px;
+}
+
+#survey {
+    color: white;
+}
+
+#surveyInstructions {
+    text-align: center;
+    font-size: 35px;
+    text-shadow: 2px 2px #000;
+}
+
+#survey input[type="radio"] {
+    display: none;
+    z-index: 100;
+}
+
+#survey label:hover, #survey input:checked + label {
+    background: #DDD;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #DDD;
+    color: black;
+}
+
+#survey label {
+    box-shadow: 0 0 10px #000;
+    margin: 5px 5px 5px 5px;
+    text-align: center;
+}
+
+span {
+    margin: 5px 5px 5px 5px;
+    text-align: right;
+    border-spacing: 5px;
+    font-size:14px;
+}
+
+#tams label, #tos label{
+    width: 150px;
+    text-align: left;
+}
+
+#radioGroup{
+    padding: 5px;
+    cursor: pointer;
+    z-index: 90;
+    float: left;
+    padding: 0 1em;
+    text-align: center;
+}
+
+#age{
+    margin-top: 30px;
+}
+
+#ageButtons{
+    padding-top: 30px;
+    padding-left: 45px;
+}
+
+#ageButtons, #tosButtons, #tamsButtons, #afscs {
+    border: none;
+    box-shadow: none;
+}
+
+#tableDiv {
+    padding: 0px;
+    margin: .4rem;
+}
+
+table {
+    border-collapse: collapse;
+    align-content: center;
+}
+
+tr, th, td{
+    border: 1px solid white;
+    padding: .2rem;
+
+}
+
+td {
+    vertical-align: top;
+    text-align: left;
+    padding: .3rem;
+}
+
+#th1 {
+    border-top-left-radius: 5px;
+}
+
+#th5 {
+    border-top-right-radius: 5px;
+}
+
+#td1 {
+    border-bottom-left-radius: 5px;
+}
+
+#td5 {
+    border-bottom-right-radius: 5px;
+}
+
+#radioButtons {
+    height: 75px;
+    padding: 0px 0px 10px 0px;
+}
+
+#courseQuestions label {
+    display: block;
+    text-align: center;
+}
+
+#afterSurvey #radioButtons {
+    min-height: 125px;
+}
+
+
+#afterSurvey label {
+    margin: 0px 5px 5px 0px;
+}
+
+#postRadios{
+    min-height:0px;
+    border: none;
+    box-shadow: none;
+    margin: 0px 0px 0px 0px;
+}
+
+#highSpan{
+    display: inline-block;
+    margin: 5px 5px 5px 5px;
+}
+
+#postRadios label {
+    margin: 5px 0px 0px 0px;
+}
+
+table {
+    height: 50px;
+}
+
+#buttons {
+    box-shadow:none;
+    border: none;
+    text-align: center;
+    align-content: center;
+}
+
+.inputText {
+    padding: 10px;
+    box-shadow: inset 1px 1px 2px 0 #CCC;
+    border-radius: 5px;
+    height: 100px;
+    width: 300px;
+    transition: width 0.5s ease-in-out;
+    transition: border 0.3s ease-in-out;
+}
+
+.inputText:focus {
+    width:445px;
+    border: 2px solid rgba(0, 255, 255, .5);
+}
+
+input[type="submit"], input[type="button"] {
+    width:100px;
+    height: 20px;
+    border: 1px;
+    border-radius: 5px;
+}
+
